@@ -21,7 +21,6 @@ import {
 import TimerEnhance from 'react-native-smart-timer-enhance'
 import constants, { gravity } from './constants'
 
-const {width: deviceWidth, height: deviceHeight,} = Dimensions.get('window')
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -176,6 +175,8 @@ class Toast extends Component {
         if(!this._toastWidth || !this._toastHeight) {
             return
         }
+        const {width: deviceWidth, height: deviceHeight,} = Dimensions.get('window')
+        
         let { spacing, marginTop, } = this.props
         let left = (deviceWidth - this._toastWidth) / 2
         let top = position == gravity.top ? spacing +  marginTop:
